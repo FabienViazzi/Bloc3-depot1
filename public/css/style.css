@@ -1,0 +1,34 @@
+/* public/css/style.css */
+/* Fond sombre et texte clair */
+body {
+  background-color: #23272a;
+  color: #f5f5f5;
+}
+/* Section banniere centrée */
+.banniere {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.banniere h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+.banniere p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+/* Bouton JO */
+.btn-primary {
+  background-color: 	#7289da;
+  border-color: 	#7289da;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+}
+.btn-primary:hover {
+  background-color: #99aab5;
+  border-color: #99aab5;
+}
