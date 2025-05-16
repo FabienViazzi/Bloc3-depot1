@@ -1,0 +1,121 @@
+Documentation technique  Application de réservation d’e-tickets pour les JO 2024
+
+1.  Stack technique utilisée
+Front-end : Twig (template engine de Symfony)
+
+
+Back-end : Symfony 6 (framework PHP)
+
+
+Base de données : PostgreSQL
+
+
+Déploiement : Fly.io
+
+
+Gestion de projet : Trello (méthode Kanban)
+
+
+Versioning : Git (hébergé sur GitHub)
+
+
+2.  Sécurité de l’application
+2.1 Authentification
+Système d’inscription avec validation des champs (nom, prénom, email, mot de passe fort).
+
+
+Le mot de passe est haché avec bcrypt (via Symfony Security).
+
+
+L’utilisateur ne peut accéder au paiement que s’il est connecté.
+
+
+2.2 Génération de clés sécurisées
+Une clé unique est générée à l’inscription.
+
+
+Une deuxième clé est générée lors du paiement, utilisée pour sécuriser l’e-ticket.
+
+
+La concaténation des deux clés sert de base à la génération d’un QR code sécurisé.
+
+
+2.3 Accès administrateur
+Le rôle admin est attribué manuellement via la base de données.
+
+
+L’espace admin est protégé par des routes sécurisées (ROLE_ADMIN).
+
+
+L’admin peut :
+
+
+Visualiser les ventes
+
+
+Ajouter/modifier/supprimer des offres
+
+
+2.4 Protection globale
+CSRF Token utilisé pour tous les formulaires sensibles.
+
+
+Validation côté serveur pour éviter les injections (grâce au composant Validator de Symfony).
+
+
+
+Email confirmé par lien d’activation (optionnel).
+
+
+3.  Structure de la base de données
+Tables principales
+users : contient les infos du compte utilisateur + clé1
+
+
+tickets : infos des billets achetés + clé2 + clé finale
+
+
+offres : les offres disponibles (solo, duo, famille)
+
+
+orders : les commandes passées
+
+
+
+4.  Évolutions futures prévues
+4.1 Fonctionnelles
+Ajouter une fonction de filtrage des offres (par type de sport, date, etc.)
+
+
+Implémenter un historique de commandes
+
+
+Permettre aux utilisateurs de télécharger leur e-billet en PDF
+
+
+Ajouter un système de notifications par email ou SMS
+
+
+4.2 Techniques
+Passage à API REST ou GraphQL pour une version mobile
+
+
+Mise en cache des pages publiques (accueil, offres) avec HTTP cache
+
+
+Intégration d’un module de paiement réel via PayPal
+
+
+Ajout de tests automatisés (PHPUnit, Panther)
+
+
+
+
+5.  Liens utiles
+GitHub (code source) : https://github.com/FabienViazzi/Depot1-Evaluation.git
+
+
+Application déployée (Fly.io) : https://ton-appli.fly.dev
+
+
+Trello (gestion de projet) : https://trello.com/invite/b/68271ef6e8c26fecba91a296/ATTI69c2bbe67ed7e1a9268b4672c3a28a350DAB0A2F/exam-bloc3-debot1
