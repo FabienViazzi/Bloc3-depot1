@@ -1,0 +1,86 @@
+Manuel d’utilisation – Réservation de billets pour les JO 2024
+1. Accéder à l’application
+
+Rendez-vous sur le site officiel des Jeux Olympiques France :
+(mettre le lien)
+
+
+2. Naviguer sur le site
+
+Page d’accueil : présentation des Jeux Olympiques, infos principales et épreuves à venir.
+
+Page Offres : découvrez les offres disponibles :
+
+Solo : 1 personne
+
+Duo : 2 personnes
+
+Familiale : 4 personnes
+
+Cliquez sur le bouton "Ajouter au panier" pour choisir une offre.
+
+
+3. Créer un compte / Se connecter
+
+Cliquez sur "Connexion / Inscription" en haut à droite.
+
+Pour s’inscrire, renseignez :
+
+Prénom + Nom
+
+Email
+
+Mot de passe (minimum 8 caractères, 1 majuscule, 1 chiffre)
+
+Après inscription, vous serez automatiquement connecté.
+
+Une clé de sécurité est générée automatiquement à ce moment-là (invisible pour vous).
+
+
+4. Finaliser une réservation
+
+Une fois une ou plusieurs offres ajoutées à votre panier, cliquez sur "Voir le panier".
+
+Cliquez sur "Procéder à la réservation".
+
+Une clé de sécurité d’achat est générée (en interne).
+
+Le système simule un paiement.
+
+Un e-billet avec QR Code est généré à la fin.
+
+
+5. Accéder à votre billet
+
+Dans votre espace personnel, allez dans "Mes billets"
+
+Vous pouvez y consulter :
+
+Le nom de l’offre achetée
+
+Le QR code de votre e-billet
+
+
+6. Sécurité et vérification des billets
+
+Le jour des JO, vos billets seront scannés à l’entrée. Grâce aux clés générées lors de l’inscription et de l’achat, le personnel pourra :
+
+Vérifier l’authenticité du billet
+
+Vérifier que vous êtes bien l’acheteur
+
+
+7. Espace administrateur (réservé a l'organistation des JO)
+Accessible uniquement aux administrateurs via une URL spécifique :
+/admin
+Fonctionnalités disponibles :
+
+Visualisation des ventes
+
+Gestion des offres (ajout, modification, suppression)
+
+L’accès est protégé par un compte administrateur avec le rôle ROLE_ADMIN.
+
+
+Besoin d’aide :
+Contactez le support via l’email indiqué dans la page de contact ou accédez à la page FAQ dans le menu.
