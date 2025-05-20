@@ -1,5 +1,13 @@
 app = "studijo2024"
 
-# (vous pouvez ajouter un release_command pour lancer les migrations :)
-[deploy]
-  release_command = "php bin/console doctrine:migrations:migrate --no-interaction"
+[[services]]
+  internal_port = 8080
+  protocol = "tcp"
+
+  [services.concurrency]
+    hard_limit = 25
+    soft_limit = 20
+
+  [[services.ports]]
+    handlers = ["http"]
+    port = 80
