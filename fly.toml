@@ -1,0 +1,5 @@
+app = "studijo2024"
+
+# (vous pouvez ajouter un release_command pour lancer les migrations :)
+[deploy]
+  release_command = "php bin/console doctrine:migrations:migrate --no-interaction"

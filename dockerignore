@@ -1,0 +1,6 @@
+# .dockerignore
+var/cache/
+var/log/
+var/sessions/
+vendor/
+node_modules/
