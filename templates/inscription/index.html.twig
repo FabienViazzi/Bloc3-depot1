@@ -1,0 +1,57 @@
+{# templates/registration/index.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription – JO 2024{% endblock %}
+
+{% block body %}
+<div class="registration-container">
+  <div class="card discord-card p-4 registration-card">
+    <h2 class="registration-title">Créer un compte</h2>
+
+    {{ form_start(registrationForm, {
+      attr: { class: 'discord-form' }
+    }) }}
+
+      <div class="mb-3">
+        {{ form_row(registrationForm.prenom, {
+          attr: { class: 'form-control discord-input', placeholder: 'Prénom' }
+        }) }}
+      </div>
+
+      <div class="mb-3">
+        {{ form_row(registrationForm.nom, {
+          attr: { class: 'form-control discord-input', placeholder: 'Nom' }
+        }) }}
+      </div>
+
+      <div class="mb-3">
+        {{ form_row(registrationForm.email, {
+          attr: { class: 'form-control discord-input', placeholder: 'Email' }
+        }) }}
+      </div>
+
+      <div class="mb-3">
+        {{ form_row(registrationForm.plainPassword.first, {
+          label: 'Mot de passe',
+          attr: { class: 'form-control discord-input', placeholder: '••••••••' }
+        }) }}
+      </div>
+
+      <div class="mb-4">
+        {{ form_row(registrationForm.plainPassword.second, {
+          label: 'Confirmer le mot de passe',
+          attr: { class: 'form-control discord-input', placeholder: '••••••••' }
+        }) }}
+      </div>
+
+      <button type="submit" class="btn btn-discord registration-button">S’inscrire</button>
+
+    {{ form_end(registrationForm) }}
+
+    <div class="text-center mt-3">
+      <a href="{{ path('app_login') }}" class="discord-link">Déjà un compte ? Connectez-vous</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
+

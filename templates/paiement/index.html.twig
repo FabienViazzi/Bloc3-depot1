@@ -1,0 +1,50 @@
+{# templates/paiement/index.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Paiement – JO 2024{% endblock %}
+
+{% block body %}
+  <div class="container mx-auto p-4">
+    <h1 class="text-2xl font-bold mb-4">Votre Panier</h1>
+
+    {% if items is empty %}
+      <p class="mb-4">Votre panier est vide. <a href="{{ path('offers_list') }}">Retour aux offres</a>.</p>
+    {% else %}
+      <table class="w-full mb-6 border-collapse">
+        <thead>
+          <tr>
+            <th class="border px-2 py-1 text-left">Offre</th>
+            <th class="border px-2 py-1">Quantité</th>
+            <th class="border px-2 py-1 text-right">Sous-total</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in items %}
+            <tr>
+              <td class="border px-2 py-1">{{ row.offer.name }}</td>
+              <td class="border px-2 py-1 text-center">{{ row.quantity }}</td>
+              <td class="border px-2 py-1 text-right">{{ row.subtotal|number_format(2, ',', ' ') }} €</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+        <tfoot>
+          <tr>
+            <th colspan="2" class="border px-2 py-1 text-right">Total</th>
+            <th class="border px-2 py-1 text-right">{{ total|number_format(2, ',', ' ') }} €</th>
+          </tr>
+        </tfoot>
+      </table>
+
+      <form action="{{ path('checkout_process') }}" method="POST">
+
+        <input type="hidden" name="_token" value="{{ csrf_token('checkout_process') }}">
+        <button 
+          type="submit"
+          class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700"
+        >
+          Payer {{ total|number_format(2, ',', ' ') }} €
+        </button>
+      </form>
+    {% endif %}
+  </div>
+{% endblock %}

@@ -1,0 +1,34 @@
+{# templates/paiement/confirmation.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Confirmation d'achat – JO 2024{% endblock %}
+
+{% block body %}
+  <div class="container mx-auto p-4">
+    <h1 class="text-2xl font-bold mb-4">Merci pour votre achat !</h1>
+
+    <p class="mb-2">
+      Votre commande (ID : <strong>{{ eBillet.order.id }}</strong>) a bien été enregistrée le 
+      <strong>{{ eBillet.order.createdAt|date('d/m/Y H:i') }}</strong>.
+    </p>
+
+    <h2 class="text-xl font-semibold mt-6 mb-2">Votre e-billet</h2>
+    <p class="mb-4">
+      Présentez ce QR Code à l’entrée des sites olympiques. Vous pouvez l’afficher sur votre 
+      smartphone ou l’imprimer.
+    </p>
+
+    <div class="mb-6">
+      <img src="{{ eBillet.qrCode }}" alt="QR Code de votre e-billet" class="mx-auto" width="300" 
+      height="300"/>
+    </div>
+
+    <p class="text-sm text-gray-600">
+      Clé finale de vérification : <code>{{ eBillet.clefFinale }}</code>
+    </p>
+
+    <a href="{{ path('home') }}" class="inline-block mt-6 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+      Retour à l’accueil
+    </a>
+  </div>
+{% endblock %}

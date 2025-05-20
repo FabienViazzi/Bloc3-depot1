@@ -1,10 +1,12 @@
 /* public/css/style.css */
+
 /* Fond sombre et texte clair */
 body {
   background-color: #23272a;
   color: #f5f5f5;
 }
-/* Section banniere centrée */
+
+/* Section bannière centrée */
 .banniere {
   min-height: 80vh;
   display: flex;
@@ -21,14 +23,85 @@ body {
   font-size: 1.25rem;
   margin-bottom: 2rem;
 }
+
 /* Bouton JO */
 .btn-primary {
-  background-color: 	#7289da;
-  border-color: 	#7289da;
+  background-color: #7289da;
+  border-color: #7289da;
   padding: 0.75rem 1.5rem;
   font-size: 1.1rem;
 }
 .btn-primary:hover {
   background-color: #99aab5;
   border-color: #99aab5;
+}
+
+
+
+/* Conteneur centré pour le formulaire */
+.registration-container {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Carte principale du formulaire */
+.discord-card {
+  background-color: #36393f;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Largeur et marges de la carte */
+.registration-card {
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Titre du formulaire */
+.registration-title {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #dcddde;
+}
+
+/* Style des champs du formulaire */
+.discord-form .form-control {
+  background-color: #202225;
+  border: 1px solid #202225;
+  color: #dcddde;
+}
+
+/* Focus sur les champs */
+.discord-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(114, 137, 218, 0.5);
+  border-color: #7289da;
+}
+
+/* Bouton d'inscription */
+.btn-discord {
+  background-color: #7289da;
+  color: #ffffff;
+  border: none;
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.btn-discord:hover {
+  background-color: #5b6eae;
+}
+
+/* Lien vers la page de connexion */
+.discord-link {
+  color: #7289da;
+  text-decoration: none;
+}
+
+.discord-link:hover {
+  text-decoration: underline;
 }
