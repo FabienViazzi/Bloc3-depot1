@@ -1,30 +1,19 @@
-# Utilise l’image PHP FPM officielle
-FROM php:8.2-fpm
+# 1. Choisir une image PHP officielle
+FROM php:8.1-cli
 
-# 1) Installer les dépendances système (PostgreSQL, unzip, zip, git)
+# 2. Installer les extensions nécessaires (pdo_pgsql, etc.) et Composer
 RUN apt-get update \
- && apt-get install -y libpq-dev unzip zip git \
- && docker-php-ext-install pdo pdo_pgsql \
- && rm -rf /var/lib/apt/lists/*
+  && apt-get install -y git unzip libpq-dev \
+  && docker-php-ext-install pdo_pgsql \
+  && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-# 2) Copier Composer depuis l’image officielle composer:2
-COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
-
-# 3) Définir le répertoire de travail
+# 3. Copier le code et installer les dépendances
 WORKDIR /app
+COPY . /app
+RUN composer install --no-dev --optimize-autoloader
 
-# 4) Copier uniquement les fichiers de configuration Composer pour profiter du cache Docker
-COPY composer.json composer.lock ./
+# 4. Exposer par défaut le port 8080 (c’est interne à Docker)
+EXPOSE 8080
 
-# 5) Autoriser l’exécution en root et installer les dépendances PHP sans lancer les scripts
-ENV COMPOSER_ALLOW_SUPERUSER=1
-RUN composer install --no-dev --optimize-autoloader --no-scripts
-
-# 6) Copier le reste de l’application
-COPY . .
-
-# 7) Vider le cache Symfony en mode production
-RUN php bin/console cache:clear --env=prod
-
-# 8) Point d’entrée : lance PHP-FPM
-CMD ["php-fpm"]
+# 5. Démarrer le serveur PHP intégré en écoutant sur 0.0.0.0 et sur $PORT
+CMD ["sh", "-c", "php -S 0.0.0.0:${PORT:-8080} -t public"]
