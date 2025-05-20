@@ -1,7 +1,7 @@
-# 1. Choisir une image PHP officielle
+# 1. Image de base PHP CLI
 FROM php:8.1-cli
 
-# 2. Installer les paquets système et extensions PHP nécessaires
+# 2. Paquets système + extensions PHP
 RUN apt-get update \
  && apt-get install -y \
     git \
@@ -9,29 +9,34 @@ RUN apt-get update \
     zlib1g-dev \
     libzip-dev \
     libpq-dev \
+    libicu-dev \
+    libonig-dev \
+    libxml2-dev \
+    libpng-dev \
+    libjpeg-dev \
  && docker-php-ext-install \
     pdo_pgsql \
-    zip
+    zip \
+    intl \
+    mbstring \
+    xml \
+    opcache
 
 # 3. Installer Composer
-RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
- && php composer-setup.php --install-dir=/usr/local/bin --filename=composer \
- && rm composer-setup.php
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-# 4. Définir le répertoire de travail
+# 4. Copier uniquement les définitions de dépendances pour le cache
 WORKDIR /app
-
-# 5. Copier les fichiers de dépendances d'abord (pour profiter du cache)
 COPY composer.json composer.lock ./
 
-# 6. Installer les dépendances PHP
-RUN composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist
+# 5. Lancer Composer en mode verbeux pour capturer l’erreur exacte
+RUN composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist -vvv
 
-# 7. Copier le reste de votre code
+# 6. Copier le reste de l’application
 COPY . .
 
-# 8. Exposer le port interne (par défaut 8080)
+# 7. Exposer le port interne
 EXPOSE 8080
 
-# 9. Démarrage du serveur Symfony en mode prod, écoutant sur 0.0.0.0 et sur le port $PORT
+# 8. Lancer le serveur PHP interne via Symfony
 CMD ["sh", "-c", "php -S 0.0.0.0:${PORT:-8080} -t public"]
