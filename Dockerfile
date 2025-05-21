@@ -1,7 +1,8 @@
-# 1. Image de base PHP CLI
+# Fichier Dockerfile
+
 FROM php:8.1-cli
 
-# 2. Paquets système + extensions PHP
+
 RUN apt-get update \
  && apt-get install -y \
     git \
@@ -13,30 +14,31 @@ RUN apt-get update \
     libonig-dev \
     libxml2-dev \
     libpng-dev \
-    libjpeg-dev \
+    libjpeg62-turbo-dev \
+    libfreetype6-dev \
+    libcurl4-openssl-dev \
+    subversion \
+ && docker-php-ext-configure gd \
+      --with-jpeg=/usr/include/ --with-freetype=/usr/include/ \
  && docker-php-ext-install \
-    pdo_pgsql \
-    zip \
-    intl \
-    mbstring \
-    xml \
-    opcache
+      pdo_pgsql zip intl mbstring xml opcache gd curl
 
-# 3. Installer Composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-# 4. Copier uniquement les définitions de dépendances pour le cache
+RUN curl -sS https://getcomposer.org/installer \
+    | php -- --install-dir=/usr/local/bin --filename=composer
+
 WORKDIR /app
+
+
 COPY composer.json composer.lock ./
+RUN composer install --no-dev --optimize-autoloader
 
-# 5. Lancer Composer en mode verbeux pour capturer l’erreur exacte
-RUN composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist -vvv
 
-# 6. Copier le reste de l’application
 COPY . .
 
-# 7. Exposer le port interne
-EXPOSE 8080
 
-# 8. Lancer le serveur PHP interne via Symfony
-CMD ["sh", "-c", "php -S 0.0.0.0:${PORT:-8080} -t public"]
+EXPOSE 8000
+
+
+ENV PORT 8000
+CMD ["sh", "-c", "php -S 0.0.0.0:${PORT} -t public"]
