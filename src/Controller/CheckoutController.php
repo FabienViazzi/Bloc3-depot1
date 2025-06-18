@@ -101,8 +101,7 @@ class CheckoutController extends AbstractController
 
         // --- Fallback Google Charts pour le QR Code ---
         $qrUri = sprintf(
-            'https://chart.googleapis.com/chart?cht=qr&chs=300x300&chl=%s',
-            urlencode($finalKey)
+            'https://quickchart.io/qr?text="&ENCODEURL(',urlencode($finalKey),')'
         );
         // -----------------------------------------------
 
