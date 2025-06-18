@@ -35,7 +35,7 @@ COPY . .
 # Déboguer si Composer est bien installé
 RUN composer --version
 RUN composer clear-cache
-RUN composer install --no-dev --optimize-autoloader
+RUN composer install --optimize-autoloader && composer dump-autoload --no-dev
 
 # Permissions (optionnel mais utile)
 RUN chown -R www-data:www-data /app
