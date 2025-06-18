@@ -22,6 +22,9 @@ RUN apt-get update \
  && docker-php-ext-install \
       pdo_pgsql zip intl mbstring xml opcache gd curl
 
+# Définir la variable d’environnement pour autoriser l'exécution en root
+ENV COMPOSER_ALLOW_SUPERUSER=1
+
 # Installer Composer
 RUN curl -sS https://getcomposer.org/installer \
     | php -- --install-dir=/usr/local/bin --filename=composer
