@@ -1,9 +1,70 @@
 /* public/css/style.css */
 
 /* Fond sombre et texte clair */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 body {
   background-color: #23272a;
   color: #f5f5f5;
+  background:url('https://cloudfront-eu-central-1.images.arcpublishing.com/leparisien/K4FXAJJKPRBCDNQN5E2TWPYZFE.jpg') center center;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 95%;
+  margin: 0 auto;
+}
+.main>*:not(.site-footer) {
+  flex: 1;
+} 
+.container {
+  width: 100%;
+}
+
+#header .navbar {
+  background-color: #222;
+  margin: 0;
+  border-radius: 2px;
+}
+#header .navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  width : 100%;
+}
+#header .navbar ul li {
+  list-style: none;
+  margin: 0;
+  width: 20%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 40px;
+  line-height: 40px;
+}
+
+#header .navbar a,
+#header .navbar .nav-link {
+  color: #fff ;
+  text-decoration: none;
+}
+
+#header .navbar .btn {
+  margin-left: 0.5rem;
+}
+
+#header .navbar .nav-link:hover,
+#header .navbar .navbar-brand:hover {
+  color: #ddd ;
+}
+.discord-card {
+  padding: 5px;
 }
 
 /* Section bannière centrée */
@@ -23,20 +84,55 @@ body {
   font-size: 1.25rem;
   margin-bottom: 2rem;
 }
-
-/* Bouton JO */
-.btn-primary {
-  background-color: #7289da;
-  border-color: #7289da;
-  padding: 0.75rem 1.5rem;
-  font-size: 1.1rem;
+#home-offer a{
+  display: block;
+  float: left;
+  height: 200px;
+  width:48%;
+  margin: 10px 1%;
+  box-sizing: border-box;
+  text-decoration: none; 
+  color: #fff;
+  background-color: #6c7ec2;
+  line-height: 200px;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 2px;
 }
-.btn-primary:hover {
-  background-color: #99aab5;
-  border-color: #99aab5;
+.form-control{
+  border-radius: 4px;
 }
-
-
+#home-offer a:hover {
+  background-color: #556bbd;
+  color: #fff;
+  text-decoration: none;
+}
+.paiement-container{
+  width : 50%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #2c2f33;
+}
+.empty-cart {
+  margin: 10px;
+  padding: 10px;
+}
+.panier-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 30%;
+  background-color: #2c2f33;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+.back-to-offer {
+  display: flex;
+  justify-content: center;
+  width: 20%;
+}
 
 /* Conteneur centré pour le formulaire */
 .registration-container {
@@ -59,19 +155,52 @@ body {
   width: 100%;
   max-width: 400px;
 }
+/* Style du bouton de validation */
+#checkout-link-button {
+  display: flex;
+  width:30%;
+  text-decoration: none;
+}
+/*list-group container */
+.list-group {
+  background-color: 	#424549;
+  border: 1px solid #ccc;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px) grayscale(1);
+}
 
+/*bouton des offres */
+.list-group-item {
+ display: flex;
+  justify-content: space-between; 
+  align-items: center;             
+  width: 30%;                      
+  margin: 10px auto;               
+  padding: 10px;
+  white-space: nowrap
+}
 /* Titre du formulaire */
 .registration-title {
   text-align: center;
   margin-bottom: 1rem;
   color: #dcddde;
 }
-
+.offer-details {
+  margin : 0 10px;
+  padding-right: 50px;
+  width: 400px;
+}
 /* Style des champs du formulaire */
 .discord-form .form-control {
+  display: block;
   background-color: #202225;
   border: 1px solid #202225;
   color: #dcddde;
+  margin: 2px;
+  width: 90%;
 }
 
 /* Focus sur les champs */
@@ -90,6 +219,7 @@ body {
   padding: 0.75rem;
   border-radius: 4px;
   font-size: 1rem;
+  text-decoration: none;
 }
 
 .btn-discord:hover {
@@ -104,4 +234,81 @@ body {
 
 .discord-link:hover {
   text-decoration: underline;
+}
+
+.event-container {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: auto;
+  align-items: flex-start;
+}
+
+.main-content {
+  flex: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+.card-title {
+  font-size: 1.5rem;
+  color: #dcddde;
+  margin-bottom: 2rem;
+}
+.event-block {
+  background-color: 	#424549;
+  border: 1px solid #ccc;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px) grayscale(1);;
+}
+
+.event-sports-list {
+  flex: 1;
+  background-color: 	#424549;
+  border: 1px solid #bbb;
+  padding: 1.5rem;
+  border-radius: 8px;
+  height: fit-content;
+  position: sticky;
+  top: 2rem;
+  overflow-y: auto;
+  max-height: calc(100vh - 4rem);
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px) grayscale(1);
+}
+.event-last{
+  grid-column: span 2;
+}
+.event-sports-list ul {
+  padding-left: 1.2rem;
+  list-style: none;
+}
+
+.event-sports-list li::before {
+  content: "• ";
+  color: #0077cc;
+}
+.btn-accueil {
+display: ruby-text;
+}
+.site-footer {
+  background-color: #202225;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px) grayscale(1);
+  width: 100%;
+}
+.footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-left: 10px;
+}
+.footer-copy {
+  text-align: center;
+  padding: 10px;
+  color: #dcddde;
 }

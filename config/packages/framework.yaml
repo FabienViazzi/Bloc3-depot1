@@ -2,10 +2,9 @@ framework:
     secret: '%env(APP_SECRET)%'
     #csrf_protection: true
     http_method_override: false
-
+    
     # Activation du support de session (défaut : stockage fichiers)
     session:
-
         handler_id: null
         cookie_lifetime: 7200        # durée de vie du cookie (en secondes)
         gc_maxlifetime: 7200         # durée de vie des données de session côté serveur

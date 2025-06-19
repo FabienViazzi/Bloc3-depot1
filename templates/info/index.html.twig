@@ -1,14 +1,306 @@
 {# templates/info/index.html.twig #}
 {% extends 'base.html.twig' %}
 
-{% block title %}Informations{% endblock %}
+{% block title %}Informations
+{% endblock %}
 
 {% block body %}
-  <div class="container mt-5">
-    <h1>Page d’information</h1>
-    <p>Bienvenue sur la page d’information du site JO 2024.</p>
-  </div>
+	<div class="event-container">
+		<div class="main-content">
+			<div class="event-block">
+				<h2 class="card-title">🏟️ À propos de l’événement</h2>
+				<p>Les Jeux Olympiques 2024 sont l’événement sportif mondial majeur de l’année, rassemblant les meilleurs athlètes de la planète. Organisés cette année à Paris, France, ils promettent des moments inoubliables, une célébration du sport, de l’effort et de la fraternité entre les nations.</p>
+			</div>
+
+			<div class="event-block">
+				<h2 class="card-title">📅 Dates de l'événement</h2>
+				<p>
+					Du 26 juillet au 11 août 2024
+																																
+																																Pendant deux semaines, Paris vibrera au rythme des compétitions, des cérémonies, et des performances légendaires dans des lieux emblématiques comme le Stade de France, le Grand Palais ou encore la Tour Eiffel.</p>
+			</div>
+
+
+			<div class="event-block">
+				<h2 class="card-title">📍Lieux de compétition</h2>
+				<p>Les compétitions se tiendront dans des sites répartis dans tout Paris et ses environs, notamment :
+					<ul>
+						<li>Stade de France (Saint-Denis) – Cérémonies d'ouverture et d’athlétisme</li>
+						<li>Bercy Arena – Gymnastique et sports de combat</li>
+						<li>Champ-de-Mars Arena – Judo et lutte, avec vue sur la Tour Eiffel</li>
+						<li>Parc des Princes – Football</li>
+						<li>Château de Versailles – Équitation et pentathlon moderne</li>
+					</ul>
+
+				</p>
+			</div>
+
+			<div class="event-block">
+				<h2 class="card-title">🎟️ Réservation des billets</h2>
+				<p>Grâce à notre système de réservation d’e-tickets en ligne, vous pouvez :
+					<ul>
+						<li>Consulter les épreuves disponibles</li>
+						<li>Réserver vos places en quelques clics</li>
+						<li>Recevoir vos e-tickets par mail ou dans votre espace personnel</li>
+					</ul>
+					<button href="{{ path('offers_list') }}" class="btn-discord">
+						Découvrir les offres
+					</button>
+				</p>
+			</div>
+
+			<div class="event-block event-last">
+				<h2 class="card-title">🎉Une fête pour tous</h2>
+				<p>Les Jeux Olympiques de Paris 2024 ne sont pas qu’un événement sportif : c’est aussi une fête populaire, avec des fan zones, des concerts, des retransmissions en direct dans les grandes villes, et de nombreuses animations gratuites.
+
+				</p>
+			</div>
+		</div>
+		<div class="event-sports-list">
+			<h2 class="card-title">
+				<i class="fa-solid fa-medal"></i>
+				Les disciplines sportives</h2>
+			<ul>
+				<li>
+					<strong>
+						<i class="fa-solid fa-person-running"></i> Athlétisme</strong>
+					:
+					<ul>
+						<li>
+							<i class="fa-solid fa-person-running"></i>courses sur piste</li>
+						<li>
+							<i class="fa-solid fa-person-running"></i>sauts en hauteur</li>
+						<li>
+							<i class="fa-solid fa-person-running"></i>sauts en longueur</li>
+						<li>
+							<i class="fa-solid fa-person-running"></i>lancers (poids, disque, javelot)</li>
+						<li>
+							<i class="fa-solid fa-person-running"></i>marathon</li>
+					</ul>
+					<br>
+				</li>
+				<li>
+					<strong>
+						<i class="fa-solid fa-person-swimming"></i> Natation</strong>
+					:
+					<ul>
+						<li>
+							<i class="fa-solid fa-person-swimming"></i>bassin</li>
+						<li>
+							<i class="fa-solid fa-person-swimming"></i>plongeon</li>
+						<li>
+							<i class="fa-solid fa-person-swimming"></i>natation artistique</li>
+						<li>
+							<i class="fa-solid fa-person-swimming"></i>eau libre</li>
+					</ul>
+				</li>
+				<li>
+					<br>
+					<strong>
+						<i class="fa-solid fa-child-reaching"></i> Gymnastique</strong>
+					:
+					<ul>
+						<li>
+							<i class="fa-solid fa-child-reaching"></i>
+							Artistique</li>
+						<li>
+							<i class="fa-solid fa-child-reaching"></i>
+							Rythmique</li>
+						<li>
+							<i class="fa-solid fa-child-reaching"></i>
+							Trampoline</li>
+					</ul>
+				</li>
+				<br>
+				<li>
+					<strong>
+						<i class="fa-solid fa-user-ninja"></i>
+						Sports de combat</strong>
+					:
+					<ul>
+						<li>
+							<i class="fa-solid fa-user-ninja"></i>
+							Judo</li>
+						<li>
+							<i class="fa-solid fa-user-ninja"></i>
+							Boxe</li>
+						<li>
+							<i class="fa-solid fa-user-ninja"></i>
+							Taekwondo</li>
+						<li>
+							<i class="fa-solid fa-user-ninja"></i>
+							Lutte (gréco-romaine et libre)</li>
+					</ul>
+				</li>
+				<br>
+				<li>
+					<strong>
+						<i class="fa-solid fa-users"></i>
+						Sports collectifs</strong>
+					:
+					<ul>
+						<li>
+							<i class="fa-solid fa-futbol"></i>
+							Football</li>
+						<li>
+							<i class="fa-solid fa-basketball"></i>
+							Basketball</li>
+						<li>
+							<i class="fa-solid fa-basketball"></i>
+							Basketball 3x3</li>
+						<li>
+							<i class="fa-solid fa-person-running"></i>
+							Handball</li>
+						<li>
+							<i class="fa-solid fa-volleyball"></i>
+							Volley-ball</li>
+						<li>
+							<i class="fa-solid fa-volleyball"></i>
+							Beach-volley</li>
+					</ul>
+				</li>
+				<br>
+				<li>
+					<strong>
+						<i class="fa-solid fa-bicycle"></i>
+						Cyclisme</strong>
+					:
+					<ul>
+						<li>
+							<i class="fa-solid fa-bicycle"></i>
+							Route</li>
+						<li>
+							<i class="fa-solid fa-bicycle"></i>
+							Piste</li>
+						<li>
+							<i class="fa-solid fa-person-biking"></i>
+							VTT</li>
+						<li>
+							<i class="fa-solid fa-person-biking"></i>
+							BMX racing</li>
+						<li>
+							<i class="fa-solid fa-person-biking"></i>
+							BMX freestyle</li>
+					</ul>
+				</li>
+				<br>
+				<li>
+					<strong>
+						<i class="fa-solid fa-sailboat"></i>
+						Sports nautiques</strong>
+					:
+					<ul>
+						<li>
+							<i class="fa-solid fa-sailboat"></i>
+							Aviron</li>
+						<li>
+							<i class="fa-solid fa-sailboat"></i>
+							Canoë-kayak (slalom et sprint)</li>
+						<li>
+							<i class="fa-solid fa-sailboat"></i>
+							Voile</li>
+					</ul>
+				</li>
+				<br>
+				<li>
+					<strong>
+						<i class="fa-solid fa-table-tennis-paddle-ball"></i>
+						Sports de raquettes</strong>
+					:
+					<ul>
+						<li>
+							<i class="fa-solid fa-table-tennis-paddle-ball"></i>
+							Tennis</li>
+						<li>
+							<i class="fa-solid fa-table-tennis-paddle-ball"></i>
+							Badminton</li>
+						<li>
+							<i class="fa-solid fa-table-tennis-paddle-ball"></i>
+							Tennis de table</li>
+					</ul>
+				</li>
+				<br>
+				<li>
+					<strong>
+						<i class="fa-solid fa-bullseye"></i>
+						Sports de précision</strong>
+					:
+					<ul>
+						<li>
+							<i class="fa-solid fa-bullseye"></i>
+							Tir à l’arc</li>
+						<li>
+							<i class="fa-solid fa-bullseye"></i>
+							Tir sportif</li>
+						<li>
+							<i class="fa-solid fa-bullseye"></i>
+							Pentathlon moderne</li>
+					</ul>
+				</li>
+				<br>
+				<li>
+					<strong>
+						<i class="fa-solid fa-horse"></i>
+						Sports équestres</strong>
+					:
+					<ul>
+						<li>
+							<i class="fa-solid fa-horse"></i>
+							Saut d’obstacles</li>
+						<li>
+							<i class="fa-solid fa-horse"></i>
+							Dressage</li>
+						<li>
+							<i class="fa-solid fa-horse"></i>
+							Concours complet</li>
+					</ul>
+				</li>
+				<br>
+				<li>
+					<strong>
+						<i class="fa-solid fa-city"></i>
+						Sports urbains et modernes</strong>
+					:
+					<ul>
+						<li>
+							<i class="fa-solid fa-person-hiking"></i>
+							Escalade sportive</li>
+						<li>
+							<i class="fa-solid fa-person-biking"></i>
+							Skateboard</li>
+						<li>
+							<i class="fa-solid fa-person-running"></i>
+							Breaking (breakdance)</li>
+					</ul>
+				</li>
+				<br>
+				<li>
+					<strong>
+						<i class="fa-solid fa-dice"></i>
+						Autres disciplines</strong>
+					:
+					<ul>
+						<li>
+							<i class="fa-solid fa-hockey-puck"></i>
+							Hockey sur gazon</li>
+						<li>
+							<i class="fa-solid fa-golf-ball-tee"></i>
+							Golf</li>
+						<li>
+							<i class="fa-solid fa-dumbbell"></i>
+							Haltérophilie</li>
+						<li>
+							<i class="fa-solid fa-person-walking-with-cane"></i>
+							Escrime</li>
+						<li>
+							<i class="fa-solid fa-person-running"></i>
+							Marathon et course sur route</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
 <p class="mt-3">
-      <a href="{{ path('home') }}">← Retour à l’accueil</a>
-    </p>
-{% endblock %}
+	<a class="btn-discord btn-accueil" href="{{ path('home') }}">← Retour à l’accueil</a>
+</p>{% endblock %}

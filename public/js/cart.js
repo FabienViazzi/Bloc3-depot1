@@ -5,7 +5,8 @@ async function refreshCartBadge() {
   try {
     const res = await fetch('/api/cart');
     const data = await res.json();
-    document.getElementById('cart-badge').textContent = data.totalItems;
+    var total = data.totalItems || 0;
+    document.getElementById('cart-badge').textContent = total;
   } catch (e) {
     console.error('Erreur lors de la récupération du panier :', e);
   }

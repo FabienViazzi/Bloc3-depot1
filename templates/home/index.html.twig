@@ -1,26 +1,29 @@
 {# templates/home/index.html.twig #}
 {% extends 'base.html.twig' %}
 
-{% block title %}Accueil – JO France 2024{% endblock %}
+{% block title %}Accueil – JO France 2024
+{% endblock %}
 
 {% block body %}
-  <div class="banniere position-relative">
-    <h1>Jeux Olympiques France 2024</h1>
-    <p>
-      Plongez au cœur de l'événement sportif le plus attendu de l’année.<br>
-      Réservez vos billets dès maintenant.
-    </p>
-    <a href="{{ path('offers_list') }}" class="btn btn-primary">
-      Découvrir les offres
-    </a>
-    <a href="{{ path('app_info') }}" class="btn btn-primary">
-      En savoir plus
-    </a>
-    <a href="{{ path('app_login') }}" class="btn btn-primary">
-      se connecter
-    </a>
-    <a href="{{ path('app_inscription') }}" class="btn btn-primary">
-      s'inscrire
-    </a>
-  </div>
+	<div class="banniere position-relative">
+		<h1>Jeux Olympiques France 2024</h1>
+		<p>
+			Plongez au cœur de l'événement sportif le plus attendu de l’année.<br>
+			Réservez vos billets dès maintenant.
+		</p>
+		<div class="container" id="home-offer">
+			<a href="{{ path('offers_list') }}" class="btn">
+				Découvrir les offres
+			</a>
+			<a href="{{ path('app_info') }}" class="btn">
+				En savoir plus
+			</a>
+			<a href="{{ path('app_login') }}" class="btn">
+				se connecter
+			</a>
+			<a href="{{ path('app_inscription') }}" class="btn">
+				s'inscrire
+			</a>
+		</div>
+	</div>
 {% endblock %}

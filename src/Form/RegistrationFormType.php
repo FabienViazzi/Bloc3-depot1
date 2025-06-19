@@ -18,7 +18,7 @@ class RegistrationFormType extends AbstractType
     {
         $builder
             ->add('prenom', TextType::class, [
-                'label' => 'Prénom',
+                'label' => 'Prénom :',
                 'constraints' => [
                     new Assert\NotBlank([
                         'message' => 'Veuillez saisir votre prénom.',
@@ -31,7 +31,7 @@ class RegistrationFormType extends AbstractType
                 ],
             ])
             ->add('nom', TextType::class, [
-                'label' => 'Nom',
+                'label' => 'Nom :',
                 'constraints' => [
                     new Assert\NotBlank([
                         'message' => 'Veuillez saisir votre nom.',
@@ -44,7 +44,7 @@ class RegistrationFormType extends AbstractType
                 ],
             ])
             ->add('email', EmailType::class, [
-                'label' => 'Adresse e-mail',
+                'label' => 'Adresse e-mail :',
                 'constraints' => [
                     new Assert\NotBlank([
                         'message' => 'Veuillez saisir votre adresse e-mail.',
@@ -58,11 +58,11 @@ class RegistrationFormType extends AbstractType
                 'type' => PasswordType::class,
                 'mapped' => false,
                 'first_options'  => [
-                    'label' => 'Mot de passe',
+                    'label' => 'Mot de passe :',
                     'attr' => ['placeholder' => '••••••••'],
                 ],
                 'second_options' => [
-                    'label' => 'Confirmer le mot de passe',
+                    'label' => 'Confirmer le mot de passe :',
                     'attr' => ['placeholder' => '••••••••'],
                 ],
                 'invalid_message' => 'Les mots de passe doivent correspondre.',

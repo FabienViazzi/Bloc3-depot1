@@ -32,7 +32,7 @@
 
       <div class="mb-3">
         {{ form_row(registrationForm.plainPassword.first, {
-          label: 'Mot de passe',
+          label: 'Mot de passe :',
           attr: { class: 'form-control discord-input', placeholder: '••••••••' }
         }) }}
       </div>
@@ -44,11 +44,11 @@
         }) }}
       </div>
 
-      <button type="submit" class="btn btn-discord registration-button">S’inscrire</button>
+      <button type="submit" class="btn-discord registration-button">S’inscrire</button>
 
     {{ form_end(registrationForm) }}
 
-    <div class="text-center mt-3">
+    <div class="text-center">
       <a href="{{ path('app_login') }}" class="discord-link">Déjà un compte ? Connectez-vous</a>
     </div>
   </div>

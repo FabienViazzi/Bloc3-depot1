@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <td>${priceNum.toFixed(2)} €</td>
             <td>${subtotalNum.toFixed(2)} €</td>
             <td class="text-center">
-              <button class="btn btn-sm btn-outline-danger remove-from-cart" data-id="${offer.id}">&times;</button>
+              <button class="remove-from-cart" data-id="${offer.id}"><i class="fa-solid fa-xmark"></i></button>
             </td>
           `;
           tableBody.appendChild(tr);

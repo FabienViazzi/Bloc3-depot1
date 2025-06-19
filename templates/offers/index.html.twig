@@ -4,19 +4,19 @@
 {% block title %}Offres – JO 2024{% endblock %}
 
 {% block body %}
-  <div class="container mt-5">
-    <h1 class="mb-4">Nos Offres</h1>
+  <div class="container">
+    <h1>Nos Offres</h1>
 
-    <ul class="list-group mb-4">
+    <ul class="list-group ">
       {% for offer in offers %}
         <li class="list-group-item d-flex justify-content-between align-items-center">
-          <div>
+          <div class="offer-details">
             <strong>{{ offer.name }}</strong> ({{ offer.places }} pers.)<br>
             {{ offer.price|number_format(2, ',', ' ') }} €
           </div>
           <button 
             type="button"
-            class="btn btn-sm btn-outline-primary add-to-cart" 
+            class="btn-discord  btn-outline-primary add-to-cart" 
             data-id="{{ offer.id }}"
           >
             Ajouter
@@ -27,6 +27,6 @@
       {% endfor %}
     </ul>
 
-    <a href="{{ path('home') }}" class="btn btn-link">← Retour à l’accueil</a>
+    <a href="{{ path('home') }}" class="btn-discord btn-link btn-accueil">← Retour à l’accueil</a>
   </div>
 {% endblock %}
