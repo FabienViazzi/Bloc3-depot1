@@ -15,11 +15,6 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
 
-        # Autorise TOUTES les requêtes GET de ces routes à sortir du firewall
-        public_get:
-            pattern: ^/(login|inscription|info|offres|commande)$
-            methods: [GET]
-            security: false
 
         # API panier reste libre
         cart_api:
@@ -50,6 +45,8 @@ security:
                 lifetime: 604800
                 path: /
                 always_remember_me: false
+
+            #user_checker: App\Security\UserChecker
 
     access_control:
         # checkout et admin protégés
