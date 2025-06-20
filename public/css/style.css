@@ -245,7 +245,17 @@ body {
 .discord-link:hover {
   text-decoration: underline;
 }
-
+.profile-container {
+  background-color: 	#424549;
+  border: 1px solid #ccc;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px) grayscale(1);
+  max-width: 600px;
+  font-size: 25px;
+}
 .event-container {
   display: flex;
   gap: 2rem;
@@ -273,7 +283,7 @@ body {
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(10px) grayscale(1);;
+  backdrop-filter: blur(10px) grayscale(1);
 }
 
 .event-sports-list {

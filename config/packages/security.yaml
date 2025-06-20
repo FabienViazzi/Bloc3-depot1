@@ -55,3 +55,4 @@ security:
         # checkout et admin protégés
         - { path: ^/checkout, roles: ROLE_USER }
         - { path: ^/admin,    roles: ROLE_ADMIN }
+        - { path: ^/profil, roles: ROLE_USER }
