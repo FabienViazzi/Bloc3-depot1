@@ -1,11 +1,13 @@
 <?php
-// src/entity/Offer.php
+// src/Entity/Offer.php
 namespace App\Entity;
 
 use App\Repository\OfferRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
+use Symfony\Component\Validator\Constraints as Assert;
+
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: OfferRepository::class)]
@@ -15,15 +17,22 @@ class Offer
     private ?int $id = null;
 
     #[ORM\Column(length: 100)]
+    #[Assert\NotBlank]
+    #[Assert\Length(min: 3)]
     private ?string $name = null;
 
     #[ORM\Column(type: Types::TEXT)]
+    #[Assert\NotBlank]
     private ?string $description = null;
 
     #[ORM\Column(type: Types::DECIMAL, precision: 10, scale: 2)]
+    #[Assert\NotBlank]
+    #[Assert\Positive(message: "Le prix doit être supérieur à 0.")]
     private ?string $price = null;
 
     #[ORM\Column]
+    #[Assert\NotNull]
+    #[Assert\PositiveOrZero(message: "Le nombre de places ne peut pas être négatif.")]
     private ?int $places = null;
 
     #[ORM\ManyToMany(targetEntity: Order::class, mappedBy: 'offers')]
@@ -107,4 +116,5 @@ class Offer
         }
         return $this;
     }
+
 }

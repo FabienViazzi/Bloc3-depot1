@@ -39,6 +39,9 @@
 								</a>
 							</li>
 							<li class="nav-item">
+								{% if is_granted('ROLE_ADMIN') %}
+									<a href="{{ path('admin_offers') }}">🛠 Gérer les Offres</a>
+								{% endif %}
 								{% if app.user %}
 									<a class="btn" href="{{ path('app_logout') }}">Déconnexion</a>
 								{% else %}
@@ -47,7 +50,9 @@
 							</li>
 							<li class="nav-item">
 								{% if app.user %}
-									<a class="btn " href="{{ path('app_client_profile') }}"><i class="fa-solid fa-circle-user"></i> Mon Profil</a>
+									<a class="btn " href="{{ path('app_client_profile') }}">
+										<i class="fa-solid fa-circle-user"></i>
+										Mon Profil</a>
 								{% endif %}
 							</li>
 						</ul>

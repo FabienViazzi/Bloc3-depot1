@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gestion des Offres
+{% endblock %}
+
+{% block body %}
+	<div class="admin-header">
+		<h1>Gestion des Offres</h1>
+
+		<a href="{{ path('admin_offer_add') }}">➕ Ajouter une offre</a>
+
+		<table>
+			<thead>
+				<tr>
+					<th>Nom</th>
+					<th>Prix</th>
+					<th>Places</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for offer in offers %}
+					<tr>
+						<td>{{ offer.name }}</td>
+						<td>{{ offer.price }}
+							€</td>
+						<td>{{ offer.places }}</td>
+						<td>
+							<a href="{{ path('admin_offer_edit', { id: offer.id }) }}">✏ Modifier</a>
+							|
+							<a href="{{ path('admin_offer_delete', { id: offer.id }) }}" onclick="return confirm('Supprimer cette offre ?');">🗑 Supprimer</a>
+						</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+
+	{% if offers is empty %}
+		<p>Aucune offre disponible.</p>
+	{% endif %}
+{% endblock %}
