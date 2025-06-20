@@ -4,10 +4,29 @@
 {% endblock %}
 
 {% block body %}
-	<h1>Ajouter une offre</h1>
-
-	{{ form_start(form) }}
-	{{ form_widget(form) }}
-	<button type="submit">Ajouter</button>
-	{{ form_end(form) }}
+<div class="admin-header">
+		<div class="admin-card">
+			<h1>Ajouter une offre :</h1>
+			{{ form_start(form) }}
+			<div class="my-custom-class-for-errors">
+				{{ form_errors(form) }}
+			</div>
+			<div class="row">
+				<div class="col">
+					{{ form_row(form.name) }}
+				</div>
+				<div class="col">
+					{{ form_row(form.description) }}
+				</div>
+				<div class="col">
+					{{ form_row(form.price) }}
+				</div>
+				<div class="col">
+					{{ form_row(form.places) }}
+				</div>
+			</div>
+			<button class="btn-discord" type="submit">Enregistrer</button>
+			{{ form_end(form) }}
+		</div>
+	</div>
 {% endblock %}

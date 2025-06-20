@@ -7,7 +7,7 @@
 	<div class="admin-header">
 		<h1>Gestion des Offres</h1>
 
-		<a href="{{ path('admin_offer_add') }}">➕ Ajouter une offre</a>
+		<a class="admin-highlight" href="{{ path('admin_offer_add') }}">➕ Ajouter une offre</a>
 
 		<table>
 			<thead>
@@ -26,9 +26,9 @@
 							€</td>
 						<td>{{ offer.places }}</td>
 						<td>
-							<a href="{{ path('admin_offer_edit', { id: offer.id }) }}">✏ Modifier</a>
+							<a class="admin-highlight" href="{{ path('admin_offer_edit', { id: offer.id }) }}">✏ Modifier</a>
 							|
-							<a href="{{ path('admin_offer_delete', { id: offer.id }) }}" onclick="return confirm('Supprimer cette offre ?');">🗑 Supprimer</a>
+							<a class="admin-highlight" href="{{ path('admin_offer_delete', { id: offer.id }) }}" onclick="return confirm('Supprimer cette offre ?');">🗑 Supprimer</a>
 						</td>
 					</tr>
 				{% endfor %}
