@@ -11,3 +11,7 @@ app = "studijo2024"
   [[services.ports]]
     handlers = ["http"]
     port = 80
+
+  [processes]
+    web = "php -S 0.0.0.0:8000 -t public"
+    worker = "php bin/console messenger:consume async"
