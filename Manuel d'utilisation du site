@@ -49,6 +49,8 @@ Le système simule un paiement.
 
 Un e-billet avec QR Code est généré à la fin.
 
+un Email de confirmation avec le QR code et les informations de paiement est envoyé a l'email connecté 
+
 
 5. Accéder à votre billet
 
@@ -79,8 +81,6 @@ Visualisation des ventes
 
 Gestion des offres (ajout, modification, suppression)
 
-L’accès est protégé par un compte administrateur avec le rôle ROLE_ADMIN.
+L’accès est protégé par un compte administrateur avec le rôle ROLE_ADMIN. UTILISER LE COMPTE admin@admin.admin et le mot de passe identique : admin@admin.admin pour tester les pages admin
 
 
-Besoin d’aide :
-Contactez le support via l’email indiqué dans la page de contact ou accédez à la page FAQ dans le menu.
