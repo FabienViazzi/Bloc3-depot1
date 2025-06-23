@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for bloc3-depot1 on 2025-06-23T12:24:58Z
+# fly.toml app configuration file generated for studijo on 2025-06-23T13:03:21Z
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'bloc3-depot1'
+app = 'studijo'
 primary_region = 'cdg'
 
 [build]
