@@ -133,6 +133,11 @@ body {
   margin: 10px;
   padding: 10px;
 }
+.remove-from-cart {
+  background-color: #202225;
+  border-radius: 2px;
+}
+
 .panier-container {
   display: flex;
   flex-direction: column;
@@ -143,6 +148,9 @@ body {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+.btn-offres {
+  margin-top: 20px;
 }
 .back-to-offer {
   display: flex;
@@ -313,6 +321,15 @@ body {
   grid-template-columns: repeat(4, 1fr);
   grid-column-gap: 3px;
 }
+.btns {
+  display: grid;
+  justify-content: space-between;
+  margin-top: 1rem;
+  width: 20%;
+}
+.event-block ul {
+  margin-left: 20px;
+}
 .event-sports-list {
   flex: 1;
   background-color: 	#424549;
@@ -341,6 +358,7 @@ body {
 }
 .btn-accueil {
 display: ruby-text;
+margin-top: 20px;
 }
 .site-footer {
   background-color: #202225;

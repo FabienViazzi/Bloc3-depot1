@@ -1,4 +1,5 @@
 {# templates/emails/confirmation.html.twig #}
+{% set isMail = isMail is defined ? isMail : false %}
 <!DOCTYPE html>
 <html>
   <body style="font-family:Arial,sans-serif; color:#333;">
@@ -14,6 +15,10 @@
       >
     </p>
     <p>Présentez ce QR Code à l’entrée des Jeux olympiques.</p>
+    {% if isMail %}
+      <hr>
+      <p style="font-size:small;">Ceci est un email automatique, merci de ne pas répondre directement.</p>
+    {% endif %}
     <hr>
     <p>À bientôt,<br>Équipe JO 2024</p>
   </body>

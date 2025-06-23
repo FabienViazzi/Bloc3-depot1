@@ -15,6 +15,7 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+
 class CheckoutController extends AbstractController
 {
     public function __construct(
@@ -115,7 +116,7 @@ class CheckoutController extends AbstractController
 
         // Envoi de l’e-mail de confirmation
         $email = (new TemplatedEmail())
-            ->from('no-reply@jo2024.fr')
+            ->from('favidevweb@gmail.com')
             ->to($user->getEmail())
             ->subject('Confirmation de votre billet JO 2024')
             ->htmlTemplate('emails/confirmation.html.twig')
@@ -123,6 +124,8 @@ class CheckoutController extends AbstractController
                 'user'    => $user,
                 'order'   => $order,
                 'eBillet' => $eBillet,
+                'clefFinale' => $finalKey,   // Chaîne (clé du billet)
+                'isMail' => true,
             ]);
         $this->mailer->send($email);
 
