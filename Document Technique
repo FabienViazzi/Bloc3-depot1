@@ -7,7 +7,7 @@ Front-end : Twig (template engine de Symfony)
 Back-end : Symfony 6 (framework PHP)
 
 
-Base de données : PostgreSQL
+Base de données : PostgreSQL (hebergé sur railway)
 
 
 Déploiement : Fly.io
@@ -64,7 +64,6 @@ Validation côté serveur pour éviter les injections (grâce au composant Valid
 
 
 
-Email confirmé par lien d’activation (optionnel).
 
 
 3.  Structure de la base de données
@@ -112,10 +111,13 @@ Ajout de tests automatisés (PHPUnit, Panther)
 
 
 5.  Liens utiles
-GitHub (code source) : https://github.com/FabienViazzi/Depot1-Evaluation.git
+GitHub (code source) : https://github.com/FabienViazzi/Bloc3-depot1/tree/main
 
 
-Application déployée (Fly.io) : https://ton-appli.fly.dev
+Application déployée (Fly.io) : https://bloc3-depot1.fly.dev/
 
 
 Trello (gestion de projet) : https://trello.com/invite/b/68271ef6e8c26fecba91a296/ATTI69c2bbe67ed7e1a9268b4672c3a28a350DAB0A2F/exam-bloc3-debot1
+
+
+Lien dbio : https://dbdiagram.io/d/bloc3-depot1-6798c354263d6cf9a0483618
