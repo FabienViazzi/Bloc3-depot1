@@ -19,6 +19,8 @@ Familiale : 4 personnes
 
 Cliquez sur le bouton "Ajouter au panier" pour choisir une offre.
 
+/!\ si vous voulez procéder a la page de paiment sans etre connecté le site vous renverra vers la page de connexion 
+
 
 3. Créer un compte / Se connecter
 
@@ -36,6 +38,8 @@ Après inscription, vous serez automatiquement connecté.
 
 Une clé de sécurité est générée automatiquement à ce moment-là (invisible pour vous).
 
+vous aurez acces a une page de profil ( en haut a droite dans le menu ) ou vous verez 
+  votre nom, prenom , email utilisé lors de la connexion 
 
 4. Finaliser une réservation
 
@@ -54,14 +58,8 @@ un Email de confirmation avec le QR code et les informations de paiement est env
 
 5. Accéder à votre billet
 
-Dans votre espace personnel, allez dans "Mes billets"
-
-Vous pouvez y consulter :
-
-Le nom de l’offre achetée
-
-Le QR code de votre e-billet
-
+connectez vous a la boite mail du compte connecté au site 
+Par mail vous recevez la confirmation d'achat ainsi que le qr code et la clé final
 
 6. Sécurité et vérification des billets
 
@@ -82,5 +80,10 @@ Visualisation des ventes
 Gestion des offres (ajout, modification, suppression)
 
 L’accès est protégé par un compte administrateur avec le rôle ROLE_ADMIN. UTILISER LE COMPTE admin@admin.admin et le mot de passe identique : admin@admin.admin pour tester les pages admin
+
+ /!\ POUR TESTER LA PAGE ADMIN VEUILLEZ UTILISER L'EMAIL ET LE MODE PASSE (identique): admin@admin.admin
+une fois connecté en admin vous aurez a la place du bouton de deconnexion un bouton "gerer les offres" 
+  - sur cette page vous aurez la possibilité de cliqué sur "ajouter une offre" "modifier une offre" et "supprimer une offre" 
+  - sur chacune des pages renseigner les valeurs comme vous le souhaité puir rendez-vous sur la page "offre" pour constater que l'ofre que vous venz d'ajouter et bien apparu
 
 
