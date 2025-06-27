@@ -84,7 +84,7 @@ class CheckoutController extends AbstractController
         $order
             ->setCreatedAt(new \DateTimeImmutable())
             ->setClefAchat(bin2hex(random_bytes(16)))
-            ->setUser($this->getUser());
+            ->setFkUser($this->getUser());
         foreach ($cart as $id => $qty) {
             if ($offer = $this->offerRepo->find($id)) {
                 for ($i = 0; $i < $qty; $i++) {

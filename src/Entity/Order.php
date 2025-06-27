@@ -24,8 +24,8 @@ class Order
     private ?string $clefAchat = null;
 
     #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'orders')]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?User $user = null;
+    #[ORM\JoinColumn(name: 'fk_user_id', referencedColumnName: 'id', nullable: false)]
+    private ?User $fkUser = null;
 
     #[ORM\ManyToMany(targetEntity: Offer::class, inversedBy: 'orders')]
     #[ORM\JoinTable(name: 'order_offer')]
@@ -63,14 +63,14 @@ class Order
         return $this;
     }
 
-    public function getUser(): ?User
+    public function getFkUser(): ?User
     {
-        return $this->user;
+        return $this->fkUser;
     }
 
-    public function setUser(?User $user): self
+    public function setFkUser(?User $user): self
     {
-        $this->user = $user;
+        $this->fkUser = $user;
         return $this;
     }
 

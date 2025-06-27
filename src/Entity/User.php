@@ -146,15 +146,15 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         if (!$this->orders->contains($order)) {
             $this->orders->add($order);
-            $order->setUser($this);
+            $order->setFkUser($this);
         }
         return $this;
     }
     public function removeOrder(Order $order): self
     {
         if ($this->orders->removeElement($order)) {
-            if ($order->getUser() === $this) {
-                $order->setUser(null);
+            if ($order->getFkUser() === $this) {
+                $order->setFkUser(null);
             }
         }
         return $this;
